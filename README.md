@@ -1,4 +1,4 @@
-可以访问我的[blog](http://hongcyu.coding.me/2019/11/17/利用Opencv将视频转换为字符视频/)查看具体细节
+可以访问我的[blog](https://hongcyu.cn/posts/43462.html)查看具体细节
 
 ## 整体思路
 
