@@ -92,22 +92,28 @@ def star_to_char(number,save_pic_path):
     print('=======================')
     return 0
 
+def process_bar(percent, start_str='', end_str='', total_length=0):
+    #进度条
+    bar = ''.join("■ " * int(percent * total_length)) + ''
+    bar = '\r' + start_str + bar.ljust(total_length) + ' {:0>4.1f}%|'.format(percent*100) + end_str
+    print(bar, end='', flush=True)
+
 def jpg_to_video(char_image_path,FPS):
     video_fourcc=VideoWriter_fourcc(*"MP42")  # 设置视频编码器,这里使用使用MP42编码器,可以生成更小的视频文件
     char_img_path_list = [char_image_path + r'/{}.jpg'.format(i) for i in range(1,number+1)] #生成目标字符图片文件的路径列表
     char_img_test = Image.open(char_img_path_list[1]).size   #获取图片的分辨率
+    if not os.path.exists('video'):
+            os.mkdir('video')
     video_writter= VideoWriter('video/new_char_video.avi' , video_fourcc , FPS , char_img_test)
-    load = 'loading'
-    count = 0 #用来清空load进度条的计数
+    sum  = len(char_img_path_list)
+    count = 0
     for image_path in char_img_path_list:
         img = cv2.imread(image_path)
         video_writter.write(img)
-        load = load + '.'
-        count += 1
-        if count % 50 == 0 :
-            load = 'loading'
-            print()
-        print('\r',load,end='')
+        end_str = '100%'
+        count= count + 1
+        process_bar(count/sum, start_str='', end_str=end_str, total_length=15)
+    
     video_writter.release()
     print('\n')
     print('=======================')
@@ -116,7 +122,7 @@ def jpg_to_video(char_image_path,FPS):
 
 if __name__ == '__main__':
     
-    video_path = 'video/miaonei.mp4'
+    video_path = 'test.mp4'
     save_pic_path = 'cache_pic'
     save_charpic_path = 'cache_char'
 
