@@ -1,6 +1,4 @@
-可以访问我的[blog](https://hongcyu.cn/posts/43462.html)查看具体细节
-
-希望有小伙伴可以帮忙完善音频添加的功能和视频容量大小的优化
+可以访问我的[https://hongcyu.cn/posts/opencv-pictovideo.html](https://hongcyu.cn/posts/opencv-pictovideo.html)查看具体细节
 
 ## 整体思路
 
@@ -13,11 +11,9 @@
 
 1. 你需要安装opencv，在cmd中输入：**pip3 install opencv-python**
 
-2. 还需要安装pillow，在cmd中输入：**pip3 install pillow**
+2. 需要在main函数中修改你的视频文件路径
 
-3. 需要在main函数中修改你的视频文件路径
-
-   将视频放置在py文件的文件夹下，并修改 video_path后的参数为你的视频路径名字即可运行
+   将视频放置在py文件的文件夹下，并修改 video_path后的参数为你的视频名字即可运行
 
    ```
    if __name__ == '__main__':
@@ -29,4 +25,4 @@
 
    
 
-4. 生成的文件不会自己删除需要手动删除
+3. 生成的文件不会自己删除需要手动删除
