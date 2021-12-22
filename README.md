@@ -18,7 +18,7 @@
 
    ```
    if __name__ == '__main__':
-      video_path = sys.path[0] + '/test.flv'
+      video_path = sys.path[0] + '/test.flv'  # 把test.flv改成你的视频名字，注意前面的斜杠要保留
       save_pic_path = sys.path[0] + '/cache_pic'  # 别动
       save_charpic_path = sys.path[0] + '/cache_char'  # 别动
       processes_number = 8  # 使用多少个进程同时处理图片，通常不超过CPU线程数，可以自行设置
