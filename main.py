@@ -7,17 +7,16 @@ from multiprocessing import Process
 try:
     from PIL import Image, ImageFont, ImageDraw
 except ImportError:
-    os.system('pip install Pillow -i https://mirrors.aliyun.com/pypi/simple/')
+    os.system('pip3 install Pillow -i https://mirrors.aliyun.com/pypi/simple/')
     from PIL import Image, ImageFont, ImageDraw
 
 try:
     import cv2
     from cv2 import VideoWriter, VideoWriter_fourcc, imread, resize
 except ImportError:
-    os.system('pip install opencv-python-headless -i https://mirrors.aliyun.com/pypi/simple/')
+    os.system('pip3 install opencv-python-headless -i https://mirrors.aliyun.com/pypi/simple/')
     import cv2
     from cv2 import VideoWriter, VideoWriter_fourcc, imread, resize
-
 
 
 # =========================
@@ -240,6 +239,7 @@ def input_process(default_video_path):
             video_path = input('请输入要处理的视频名称：')
             video_path = sys.path[0] + '/' + video_path
     return video_path
+
 
 if __name__ == '__main__':
     # 各种参数
